@@ -1,0 +1,1194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+.cm-s-inner.CodeMirror {
+    background-color: #003444;
+    color: #EEFFFF;
+    padding: 0.75rem 0.15rem 0.75rem 0.15rem;
+    border-radius: 6px;
+}
+
+#write .CodeMirror-cursors .CodeMirror-cursor {
+    border-left: 2px solid #f0f0f0;
+}
+
+.cm-s-inner .cm-header, .cm-s-inner.cm-header {
+    color: #A77DF4;
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    background: #003444;
+    color: #546E7A;
+    border: none;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+    border-top: 1px solid #eef2f2;
+    color: #fff;
+    background: #003444;
+    border-radius: 6px;
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner .CodeMirror-linenumber {
+    color: #546E7A;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+    border-left: 1px solid #FFCC00;
+}
+
+.cm-s-inner.cm-fat-cursor .CodeMirror-cursor {
+    background-color: #5d6d5c80 !important;
+}
+.cm-s-inner .cm-animate-fat-cursor {
+    background-color: #5d6d5c80 !important;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+    background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(128, 203, 196, 0.2);
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::selection {
+    background:  rgba(0,178,123,0.2);
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background: rgba(0,178,123,0.2);
+}
+.cm-s-inner .CodeMirror-selected {
+    background: rgba(0,178,123,0.2) !important;
+}
+.cm-s-inner .CodeMirror-selectedtext {
+    background: transparent !important;
+}
+
+.cm-s-inner .CodeMirror-activeline-background {
+    background: #003444;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C792EA;
+}
+
+.cm-s-inner .cm-operator {
+    color: #E9EDED;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #80CBC4;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+    color: #82B1FF;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #DECB6B;
+}
+
+.cm-s-inner .cm-atom {
+    color: #F77669;
+}
+
+.cm-s-inner .cm-number {
+    color: #F77669;
+}
+
+.cm-s-inner .cm-def {
+    color: #00AEC4;
+}
+
+.cm-s-inner .cm-string {
+    color: #C3E88D;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #80CBC4;
+}
+
+.cm-s-inner .cm-comment {
+    color: #AEBBC2;
+}
+
+.cm-s-inner .cm-variable {
+    color: #82B1FF;
+}
+
+.cm-s-inner .cm-tag {
+    color: #80CBC4;
+}
+
+.cm-s-inner .cm-meta {
+    color: #80CBC4;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #FFCB6B;
+}
+
+.cm-s-inner .cm-property {
+    color: #80CBAE;
+}
+
+.cm-s-inner .cm-qualifier {
+    color: #DECB6B;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+    color: #DECB6B;
+}
+
+.cm-s-inner .cm-error {
+    color: #FFFFFF;
+    background-color: #FF5370;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+@import url('file:///C://Users//Administrator//AppData//Roaming//Typora/themes/');
+@import url('file:///C://Users//Administrator//AppData//Roaming//Typora/themes/');
+
+/** color vars **/
+:root {
+  /* system vars*/
+  --primary-color: #f0f0f0; /* color of primary buttons */
+  --side-bar-bg-color: #003444;
+  --active-file-bg-color: #004144; /* sidebar active & hover */
+  --active-file-text-color: #ffffff;
+  --active-file-border-color: #757575;
+  --item-hover-text-color: #fff;
+  --item-hover-bg-color: #005C44;  /* sidebar footer item hover*/
+  --control-text-color: #ddd;
+  --control-text-hover-color: #fff;
+  --monospace: 'SourceHanSansSC','JetBrains Mono', -apple-system, sans-serif;
+
+  /* custom vars */
+  --theme-primary-color: #00997B; /* rgb(0, 153, 123) */
+  --white-color: #fff;
+
+  /* head */
+  --head-text-color: #333444;
+  --h1-text-color: rgba(0, 52, 68, 0.9);
+  --h5-text-color: var(--theme-primary-color);
+  --h6-text-color: rgba(0, 153, 123, 0.838);
+  --head-prefix-color: #D0D0D0;
+
+  /* text */
+  --text-color: #363C42;
+  --text-search-hit-color: rosybrown;
+
+  /* highlight */
+  --highlight-bg-color: #FFF3F3;
+  --highlight-text-color: #FF2F2F;
+
+  /* a link */
+  --a-text-color: var(--theme-primary-color);
+
+  /* annotate */
+  --annotate-text-color: #8CAA16;
+
+  /* inline code */
+  --inline-code-bg-color: #f3f3f3;
+  --inline-code-text-color: #00769A;
+
+  /* selection */
+  --selection-text-color: rgba(0, 153, 123, 0.2);
+
+  /* check-box */
+  --checked-text-color: #ADB5BD;
+  --line-through-color: #CFD4DA;
+  --border-color: #868E96;
+
+  /* table */
+  --table-border-color: #DADCDE;
+  --table-cell-bg-color:rgba(0, 153, 123, 0.03);
+
+  /* quote */
+  --quote-bg-color: rgba(0, 153, 123, 0.05);
+  --quote-text-color: #81888D ;
+
+  /* sidebar */
+  --sidebar-footer-dropdown-menu-border-color: #212529;
+  --sidebar-footer-dropdown-menu-item-border-color: #ADB5BD;
+  --sidebar-footer-item-hover-bg-color: #004544;
+  --siderbar-dropdown-menu-text-color: #fff;
+
+  /* sidebar resizer */
+  --sidebar-resizer: #6eace2;
+
+  /*--window-border: #e5e5e5;*/
+  --window-border: #1F6F57; /*sidebar layout border*/
+}
+
+
+/* global && write area */
+#write {
+  position: static;
+  width: 90%;
+  max-width: 900px;
+  line-height: 1.6;
+  padding: 36px 0 70px;
+}
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p {
+  width: auto;
+}
+html, body, #write {
+  background: var(--white-color);
+  font-family: 'SourceHanSansSC','JetBrains Mono', -apple-system, sans-serif;
+}
+p {
+  font-size: 1em;
+  font-family: 'SourceHanSansSC', 'JetBrains Mono', -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+
+/* search match active*/
+.md-search-hit.md-search-select{
+  background-color: var(--text-search-hit-color);
+}
+
+
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+  width: auto;
+  line-height: 2;
+  font-style: normal;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+h2, h3, h4 {
+  color: var(--head-text-color);
+}
+h2::before, h3::before, h4::before, h5::before, h6::before,
+h2.md-focus::before, h3.md-focus::before, h4.md-focus::before, h5.md-focus::before, h6.md-focus::before {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--head-prefix-color);
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-variant: 'small-caps';
+  line-height: 2;
+  padding: 0;
+  border: 0;
+}
+
+#write h1 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--h1-text-color);
+}
+#write h1>span{
+  position: relative;
+  display: inline-block;
+}
+#write h1>span:after{
+  content: '';
+  display: block;
+  position: absolute;
+  border-top: 3px double var(--h1-text-color);
+  height: 3px;
+  width: 15rem;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#write h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+#write>h2::before {
+  content: 'H2';
+}
+
+#write h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+#write>h3::before {
+  content: 'H3';
+}
+
+#write h4, #write h5, #write h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#write h5 {
+  color: var(--h5-text-color);
+}
+#write h6 {
+  color: var(--h6-text-color);
+}
+#write>h4::before {
+  content: 'H4';
+}
+#write>h5::before {
+  content: 'H5';
+}
+#write>h6::before {
+  content: 'H6';
+}
+
+
+/* inline element */
+#write a {
+  color: var(--a-text-color);
+  cursor: pointer;
+  padding: 0 3px 0 3px;
+  text-decoration: none;
+}
+#write a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+#write .md-link a>span:after {
+  content: '';
+  display: inline-block;
+  background-image: url("file:///C://Users//Administrator//AppData//Roaming//Typora/themes/forest/link-icon.svg");
+  background-repeat: no-repeat;
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+mark {
+  background: var(--highlight-bg-color);
+  color: var(--highlight-text-color);
+  font-weight: 500;
+  padding: 0 2px 0 2px;
+  margin: 0 2px 0 2px;
+  border-radius: 2px;
+}
+
+span.md-comment {
+  color: var(--annotate-text-color);
+}
+
+/* footnote */
+sup.md-footnote {
+  color: var(--a-text-color);
+  background-color: var(--white-color);
+}
+.footnotes .md-def-name {
+  padding-right: 4ch;
+}
+
+/* inline code */
+#write code{
+  margin: 0 2px;
+  padding: 0px 4px;
+  font-size: 0.95rem;
+  background: var(--inline-code-bg-color);
+  display: inline;
+  vertical-align: top;
+  line-height: 1.6;
+  border-radius: 6px;
+  font-weight: 700;
+  color: var(--inline-code-text-color);
+}
+.md-hover-tip .code-tooltip-content, .md-hover-tip .md-arrow:after {
+  background: var(--side-bar-bg-color);
+}
+#write *[mdtype="heading"] code{
+  font-size: inherit!important;
+  vertical-align: baseline;
+}
+
+img {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+p>.md-image:only-child:not(.md-img-error) img, p>img:only-child {
+  display: block;
+  margin: unset;
+}
+/* operation img tip dialog */
+#user-context-menu>li>a, .dropdown-menu>li>a {
+  color: var(--theme-primary-color);
+  font-weight: 500;
+}
+#user-context-menu>li>a:hover, #user-context-menu>li.active>a {
+  background: var(--theme-primary-color);
+  color: #fff;
+}
+#zoom-img-menu.context-menu.dropdown-menu>li>a:hover,
+#zoom-img-menu.context-menu.dropdown-menu>li.active>a {
+  background: var(--theme-primary-color);
+  color: #fff;
+}
+#zoom-img-menu.dropdown-menu .divider {
+  background: var(--theme-primary-color);
+}
+
+/* underline */
+#write u {
+  text-decoration: none;
+}
+#write u>span {
+  border-bottom: 1px solid;
+}
+
+/* selection */
+span::selection, *::selection {
+  background: var(--selection-text-color);
+}
+
+
+/* block element */
+/* YAML front */
+pre.md-meta-block {
+  font-size: .85rem;
+  color: var(--quote-text-color);
+  background: var(--quote-bg-color);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* toc */
+#write .md-toc {
+  font-size: 1rem;
+}
+#write a.md-toc-inner {
+  color: var(--theme-primary-color);
+}
+#write a.md-toc-inner:hover {
+  text-decoration: underline;
+  border-bottom: none;
+}
+p.md-toc-content {
+  line-height: 1.8;
+  font-weight: 500;
+}
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+/* quote */
+blockquote {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--quote-bg-color);
+  border-radius: 6px;
+  line-height: 1;
+}
+blockquote p {
+  color: var(--quote-text-color);
+  margin: 0 ;
+}
+blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  height: 100%;
+  width: .30rem;
+  background: var(--theme-primary-color);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* hr */
+div[mdtype='hr'] {
+  text-align: center;
+}
+hr {
+  border-top: 1px dashed var(--theme-primary-color);
+  transform: scaleY(0.5);
+  width: 90%;
+}
+
+/* ul, ol */
+ul>li>ul>li {
+  list-style-type: circle;
+}
+ul>li>ul>li>ul>li {
+  list-style-type: disc;
+}
+ul>li>ul>li>ul>li>ul>li {
+  list-style-type: circle;
+}
+ul>li>ul>li>ul>li>ul>li>ul>li {
+  list-style-type: disc;
+}
+ul>li>ul>li>ul>li>ul>li>ul>li>ul>li {
+  list-style-type: circle;
+}
+
+ol ul li {
+  list-style-type: circle;
+}
+ol ul>li>ul>li {
+  list-style-type: disc;
+}
+ol ul>li>ul>li>ul>li {
+  list-style-type: circle;
+}
+ol ul>li>ul>li>ul>li>ul>li {
+  list-style-type: disc;
+}
+ol ul>li>ul>li>ul>li>ul>li>ul>li {
+  list-style-type: circle;
+}
+ol ul>li>ul>li>ul>li>ul>li>ul>li>ul>li {
+  list-style-type: circle;
+}
+
+ol>li>ol>li {
+  list-style-type: lower-alpha;
+}
+ol>li>ol>li>ol>li {
+  list-style-type: decimal;
+}
+ol>li>ol>li>ol>li>ol>li {
+  list-style-type: lower-alpha;
+}
+ol>li>ol>li>ol>li>ol>li>ol>li {
+  list-style-type: decimal;
+}
+ol>li>ol>li>ol>li>ol>li>ol>li>ol>li {
+  list-style-type: lower-alpha;
+}
+ol>li>ol>li>ol>li>ol>li>ol>li>ol>li>ol>li {
+  list-style-type: decimal;
+}
+
+/* task list */
+.task-list-item.md-task-list-item {
+  list-style-type: none;
+}
+.md-task-list-item>input, #write .md-task-list-item>input[type=checkbox] {
+  margin-left: -1.6rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.md-task-list-item>input:before {
+  border: 2px solid var(--border-color);
+  width: 1rem;
+  height: 1rem;
+  background:  var(--white-color);
+  content: ' ';
+  transition: background-color 200ms ease-in-out;
+  display: block;
+}
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+  background: var(--theme-primary-color);
+  border-width: 1px;
+  transition: background-color 200ms ease-in-out;
+  border: 2px solid var(--theme-primary-color);
+}
+.md-task-list-item>input[checked]+p {
+  color: var(--checked-text-color);
+  text-decoration: line-through;
+  text-decoration-color: var(--line-through-color);
+}
+
+.md-task-list-item>input:checked:after,
+.md-task-list-item>input[checked]:after {
+  opacity: 1;
+}
+.md-task-list-item>input:after {
+  opacity: 1;
+  -webkit-transition: opacity 0.05s ease-in-out;
+  -moz-transition: opacity 0.05s ease-in-out;
+  transition: opacity 0.05s ease-in-out;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0.25rem;
+  left: 0.19rem;
+  width: 0.6rem;
+  height: 0.375rem;
+  border: 2px solid var(--white-color);
+  border-top: 0;
+  border-right: 0;
+  content: ' ';
+  opacity: 0;
+}
+
+/* table */
+.md-table-edit .btn-default {
+  color: inherit;
+}
+table.md-table {
+  width: auto;
+  min-width: 80%;
+}
+table tr:nth-child(2n), table thead  {
+  background-color: var(--table-cell-bg-color);
+}
+table thead {
+  font-weight: 900;
+}
+
+table tbody tr {
+  border-bottom: 1px solid var(--table-border-color);
+}
+table tr:first-of-type {
+  border-top: 1px solid var(--table-border-color);
+}
+table tr th, table tr td {
+  border-left: 1px solid var(--table-border-color);
+  padding: 6px 13px;
+}
+table tr th:last-of-type, table tr td:last-of-type {
+  border-right: 1px solid var(--table-border-color);
+}
+
+/* code */
+.auto-suggest-container {
+  border: 1px solid var(--theme-primary-color);
+}
+.auto-suggest-container li:hover, .auto-suggest-container li.active {
+  color: #fff;
+  background: var(--theme-primary-color);
+}
+
+
+/* outline */
+#toc-dropmenu {
+  width: 400px;
+}
+#toc-dropmenu.open {
+  background: var(--side-bar-bg-color);
+  color: var(--white-color);
+}
+#toc-dropmenu .outline-title-wrapper .outline-title {
+  font-weight: 900;
+}
+#toc-dropmenu .outline-title-wrapper {
+  height: 2.5rem;
+}
+.outline-title-wrapper .btn {
+  color: var(--white-color);
+  line-height: 2.5rem;
+  vertical-align: middle;
+}
+
+.dropdown-menu .divider {
+  background: var(--white-color);
+}
+.outline-item:hover {
+  background: var(--active-file-bg-color);
+}
+.outline-expander {
+  display: inline-block;
+  margin-right: 0.4rem;
+}
+.outline-label {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 1.5rem);
+}
+.outline-label:hover {
+  text-decoration: none;
+}
+
+
+/* notification */
+#md-notification:before {
+  top: 18px;
+}
+#md-notification p {
+  color: var(--theme-primary-color);
+  font-weight: 500;
+}
+.btn-default {
+  background: var(--theme-primary-color);
+  color: var(--white-color);
+}
+.btn-default.active, .btn-default.focus, .btn-default:active,
+.btn-default:focus, .btn-default:hover,
+.open>.dropdown-toggle.btn-default {
+  color: var(--theme-primary-color);
+  border: 1px solid var(--theme-primary-color);
+  background: var(--white-color);
+}
+
+
+/* sidebar */
+.sidebar-menu {
+  color: var(--siderbar-dropdown-menu-text-color);
+}
+.sidebar-menu .sidebar-content  .sidebar-content-content {
+  font-weight: 500;
+}
+
+#file-library-tree .file-tree-node {
+  padding-left: 1.5em;
+  color: var(--control-text-color);
+  padding-top: 6px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+.file-tree-node .file-node-content:hover {
+  cursor: pointer;
+}
+#file-library-tree .file-node-expanded>.file-node-content>.fa-folder:before {
+  content: '\f07c';
+}
+#file-library-tree .fa-file-text-o:before {
+  content: '\f1ce'
+}
+
+.file-tree-node.active>.file-node-background {
+  border-left: 4px solid var(--theme-primary-color);
+}
+#typora-sidebar .file-list-item.file-library-node:not(.active):hover {
+  background: var(--active-file-bg-color);
+}
+#typora-sidebar .file-tree-node.file-library-file-node:not(.active):hover .file-node-background {
+  background: var(--active-file-bg-color);
+  height: 2.2rem;
+}
+
+/* siderbar footer*/
+.sidebar-footer-main-item #sidebar-files-menu {
+  border: 1px solid var(--sidebar-footer-dropdown-menu-border-color);
+}
+.sidebar-menu  .dropdown-menu>li>a, .sidebar-menu .dropdown-menu>li>a:focus, .sidebar-menu .dropdown-menu>li>a:hover {
+  color: var(--siderbar-dropdown-menu-text-color);
+}
+.dropdown-menu>li>a:hover {
+  background: var(--active-file-bg-color);
+}
+.sidebar-footer-main-item .dropdown-menu .menuitem-group-label {
+  font-weight: 500;
+}
+.dropdown-menu .selected-folder-menu-item a:after {
+  color: var(--theme-primary-color);
+}
+.file-sort-item .ty-side-sort-btn {
+  cursor: pointer;
+}
+#sidebar-files-menu>.show+.menuitem-group-label.show {
+  border-top: 1px solid var(--sidebar-footer-dropdown-menu-item-border-color);
+}
+.footer-item:hover, .sidebar-footer-item:hover {
+  background: var(--sidebar-footer-item-hover-bg-color);
+}
+
+/* sidebar search*/
+.sidebar-menu .ty-sidebar-search-panel #file-library-search-input {
+  color: var(--white-color);
+  background: transparent;
+}
+/* sidebar tab for windows */
+.info-panel-tab:hover {
+  color: var(--white-color)!important;
+}
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border {
+  background-color: var(--white-color) !important;
+}
+
+/* resizer */
+#typora-sidebar-resizer.dragging{
+  color: var(--sidebar-resizer);
+}
+
+
+/* print style */
+@media print {
+  .typora-export * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  #write>h1::before, #write>h2::before, #write>h3::before, #write>h4::before, #write>h5::before, #write>h6::before {
+    content: '';
+    bottom: 1rem;
+  }
+
+  #write u {
+    text-decoration: none;
+  }
+  #write u>span {
+    border-bottom: 1px solid;
+  }
+}
+
+
+/* source code */
+#typora-source {
+  font-family: 'SourceHanSansSC','JetBrains Mono', -apple-system, sans-serif;
+  line-height: 1.6;
+}
+#typora-source .cm-header {
+  color: var(--theme-primary-color);
+}
+
+/* quick open bar */
+.ty-quick-open-category {
+  color: var(--white-color);
+}
+.ty-quick-open-category .typora-quick-open-item {
+  opacity: 0.5;
+}
+.ty-quick-open-category .typora-quick-open-item.active {
+  opacity: 1;
+}
+
+.CodeMirror.cm-s-inner.cm-s-null-scroll.CodeMirror-wrap {
+  padding: 8px;
+}
+
+
+
+
+</style><title>1</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h2 id='center应付还是对话社交平台中舆论事件的公众与政府间网络议程设置分析center'><center><strong><span>“应付”还是“对话”？社交平台中舆论事件的公众与政府间网络议程设置分析</span></strong></center></h2><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n0"><a class="md-toc-inner" href="#center应付还是对话社交平台中舆论事件的公众与政府间网络议程设置分析center"><strong>“应付”还是“对话”？社交平台中舆论事件的公众与政府间网络议程设置分析</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n3"><a class="md-toc-inner" href="#引言"><strong>引言</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n4"><a class="md-toc-inner" href="#一）问题提出">（一）问题提出</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n7"><a class="md-toc-inner" href="#二）何为有效回应">（二）何为“有效回应”？</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n12"><a class="md-toc-inner" href="#三）语用学视角下的有效回应">（三）语用学视角下的“有效回应”</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n16"><a class="md-toc-inner" href="#四）研究思路">（四）研究思路</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n20"><a class="md-toc-inner" href="#研究设计"><strong>研究设计</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" href="#一）事件与数据介绍">（一）事件与数据介绍</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n25"><a class="md-toc-inner" href="#二）研究方法">（二）研究方法</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n26"><a class="md-toc-inner" href="#1基于python的文本自动分析">1、基于Python的文本自动分析</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n31"><a class="md-toc-inner" href="#2借助ucniet进行qap分析">2、借助Ucniet进行QAP分析</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n42"><a class="md-toc-inner" href="#三）数据整理与属性网络矩阵构建">（三）数据整理与属性网络矩阵构建</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n51"><a class="md-toc-inner" href="#研究发现"><strong>研究发现</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n52"><a class="md-toc-inner" href="#一）政府与媒体间属性网络相似">（一）政府与媒体间属性网络相似</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n78"><a class="md-toc-inner" href="#二）政府与公众间属性网络也相似">（二）政府与公众间属性网络也相似</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n89"><a class="md-toc-inner" href="#结论"><strong>结论</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n111"><a class="md-toc-inner" href="#参考文献"><strong>参考文献</strong></a></span></p></div><h2 id='引言'><strong><span>引言</span></strong></h2><h3 id='一）问题提出'><span>（一）问题提出</span></h3><p><span>作为一个由多元利益群体构成的公共空间，社交媒体逐渐成为公众进行社会抗争的场所，通过各种动员方式征得舆论关注是社会内部调节的一种重要手段。在政治规训和资本干预的双重形塑之下，“回应”成为一种特殊的媒介奇观：有时回应行为是责任方的道德/政治作秀。用“如说”（说了，又好像什么都没说）来形容这一奇观恐怕并不过分。那么，在舆论事件中，政府有关部门的回应究竟是“应付”还是“对话”？“如说”式回应会带来怎样的舆论反应？能否有效应对社会关切？本文基于语用学的观点，借助网络议程设置理论（Network Agenda Setting，NAS）回答这一问题。</span></p><p><span> </span></p><h3 id='二）何为有效回应'><span>（二）何为“有效回应”？</span></h3><p><span>在行政管理的研究传统中，舆论事件因其可能引发的社会抗争而被视作是政府的潜在风险。回应是政府澄清事件事实、明确事责、裨补缺漏、进行形象重建等的必经环节，因此“回应有效性”被认为是舆论引导工作的一项评价指标。按动机分政府有两种看待舆论回应的视角，一是参与视角，将回应舆论视作应对官僚制度自身惰性的办法；二是危机视角，将回应舆论视作应对治理风险的办法。（</span><a href='https://kns.cnki.net/kcms2/article/abstract?v=4j1cDaxzFAm_qLOvGGw4_fg54zFHk0zK_194agtZmQhejyas230Z0_T92KlmeSriw4VrhBXYsnfeLtUJwmtB8XrsoOcwfanLYDysMJMp-wdU2kWLz4IhSUn06DQfaOQEWvh9KNQCsYVpOFe3dlzomg==&amp;uniplatform=NZKPT&amp;language=CHS'><span>邓卫华 &amp; 吕佩, 2021</span></a><span>）</span></p><p><span>突发社会舆论更接近于危机视角，此时政府回应舆论的主要目的在于安抚社会情绪、控制并消除危机，因此“有效回应”不能局限于“政府对公众反映的议题是否进行回应”，即不能简化为回应的“有/无”（这一般被称为“回应率”不涉及有效性），而应更多关注回应的速度和回应的程度，其中回应程度可以被定义为：对问题的重视程度和解释程度，具体表现为回应时滞短、解释详细、有较大可能得到解决（邵梓捷 &amp; 杨良伟, 2020）。</span></p><p><span>不同于看中以问题是否得到解决为主要衡量标准的行政管理研究，政治传播中的议程设置研究关注政府、公众、媒体等社会单元间的意义互动。早期的议程设置研究主要从媒介效果的角度讨论议题显著性的赋予（</span><a href='https://www.semanticscholar.org/paper/An-Expanded-Perspective-on-Agenda-Setting-Effects%3A-Guo-Vu/e39087404907426389a5322d41648d0e34e09d9c'><span>McCombs &amp; Shaw，1972</span></a><span>）；金登（Kingdon）则注意到一个想法要成为政策问题的解决方案必须经过一个由“问题流”、“政策流”和“政治流”共同汇聚的机会窗口方能奏效，由此发展而来的“多源流理论”（Multiple Streams Approach，MSA）也被认为是侧重对“观念”（Ideas）的考察（</span><a href='https://onlinelibrary.wiley.com/doi/10.1111/psj.12111'><span>Cairney &amp; Jones, 2016</span></a><span>）；随后麦库姆斯和肖等人提出了二级议程设置理论，发现议程设置效应也在“议题属性”（Agenda’s Attributes）的层面发挥作用（</span><a href='https://doi.org/10.1002/9781118783764.wbieme0030'><span>Wanta &amp; Alkazemi, 2017</span></a><span>）；Lei Guo和麦库姆斯（2012）指出，二级议程设置对议题属性的考虑仍显得过于线性化，人们对事物的认知是图谱状的，同一事物的多样属性可以组合成不同的网络，不同的属性网络可以产生不同的意义，因此多源主体间的意义交换不是简单的属性交换，而是意义网络的交换，这就是“网络议程设置”。</span></p><p><span> </span></p><h3 id='三）语用学视角下的有效回应'><span>（三）语用学视角下的“有效回应”</span></h3><p><span>语用学家奥斯汀指出，言语行为不仅仅只是对过去的陈述和定义，而是具有施行性（Performativity）的，即有些话语的首要功用是做事而不是陈述或描述（</span><a href='https://www.amazon.com/How-Do-Things-Words-Lectures/dp/0674411528'><span>Austin, 1975</span></a><span>），例如“我愿意”在婚礼中就是盟誓行为。在语用学的视域下，政府对公众、媒体等社会单位的关切进行回应的行为也可以被视为各方“以言行事”的过程，目标是政府、公众和其他社会单元通过意义交往。由于此时“回应”这一行为本身就具有特定的意义，“有效回应”在施行层面似乎只需要政府做出回应行为即可，只要考虑讲述行为的施行是为了做什么的问题。</span></p><p><span>但格莱斯（1957）在“会话理论”中指出，话语的意义来自语境，往往是情境规定了话语的实际内涵，所以人们的会话行为是为了统一对话各方对意义框架的理解。由此“有效回应”就要求政府或其他涉事方能够正确地理解舆论关切，此时“有效回应”就不仅包括回应与否、回应速度，并且可以将回应程度定义为</span><strong><span>使公众与政府、媒体等在对舆论关切的意义理解上趋同</span></strong><span>。同理我们也可以定义“如说”式作秀回应，即责任方仅通过言说行为来完成“回应”的姿态，其</span><strong><span>表意结果与对话方的关注间不相似</span></strong><span>。</span></p><p><span> </span></p><h3 id='四）研究思路'><span>（四）研究思路</span></h3><p><span>政府有多种渠道进行舆论回应，如政府热线、网络政务平台，但有学者的研究显示在政府主导的信息平台中政府回应行为往往受政治力量促发，政府是平台内容的把控人。同时，为回应舆论政府需要牺牲部分行政效率（</span><a href='https://kns.cnki.net/kcms2/article/abstract?v=-0THPtffOh3R6zuFLjJl9bHPIRQvkYeK2M1u5h-sUcEjpwMoGmGHMLvxwSih5eyrU6FfZbSAq4iVmW4AJCT_cNBJdrpEgZ7DIPd9xHWdhmEpOlhhiO3_G21xKMoC-eBaSCAuFegh5ewGeBBqZ86duA==&amp;uniplatform=NZKPT&amp;language=CHS'><span>张楠迪扬, 郑旭扬 &amp; 赵乾翔, 2023</span></a><span>），因此政府需合理分配有限的注意力，但注意力的分配往往向上级倾斜（</span><a href='https://kns.cnki.net/kcms2/article/abstract?v=uzDkwlsKYf8OdvxwWlL4F1v30203pc_J_ZQkwsYsWtN5yF7PO5VkTdM-MH2tpaDT8ltvX6w7yUPf35iqB6AQyjBg1HDYgUPMymxbhi5Oy6eWA1N3Lwq46hAi5cuBz8Lx8ybO0v5nlOqJOMIazf1aew==&amp;uniplatform=NZKPT&amp;language=CHS'><span>马雪松 &amp; 肖传龙, 2023</span></a><span>），因此政务平台主要适合参与视角。</span></p><p><span>本文则持危机视角，我国的社交媒体虽然也受到政府的规训，但其对社会事件更敏感，参与其中的网民更加多元，表达相对自由，且具有自组织的可能性，更能体现舆论事件的风险性，与课程提供的文本数据比较契合。本文选取疫情期间西安产妇在医院门口流产事件进行个案分析，该事件符合危机视角、有效统计数据丰富，比较适合进行分析；但由于缺少历时性数据，本文只能进行横向研究，探讨政府回应与舆论关切的契合度问题，以此判断：政府更关注完成回应任务还是整合舆论达成共识？</span></p><p><span> </span></p><h2 id='研究设计'><strong><span>研究设计</span></strong></h2><h3 id='一）事件与数据介绍'><span>（一）事件与数据介绍</span></h3><p><span>2022年1月1日晚8时许，西安高新区一孕妇因由于核酸时效性问题无法入院，在医院门口等待2小时，期间大出血，8个月大的婴儿流产。经其家属发布后引发舆论关注，舆论关切主要针对责任划分、赔偿方案、政策调整等问题，由于直指防疫措施，在当时的语境下具有相当的风险性。</span></p><p><span>抓取数据显示该事件热度2.04，位列年度话题前5%（186/4000），共抓取1000条文本内容，其中包含西安市卫健委的公开回应、多家媒体的报道和众多网民的评论内容，便于进行多源流议程的属性网络分析。但由于该数据为横截数据，不能考察舆论的发展过程中，政府、公众和媒体间的属性网络是否发生变化、向哪一方发生变化等纵向问题。</span></p><p><span> </span></p><h3 id='二）研究方法'><span>（二）研究方法</span></h3><h4 id='1基于python的文本自动分析'><span>1、基于Python的文本自动分析</span></h4><p><span>按照NSA分析的要求，我们可以认为“有效回应”是指</span><strong><span>公众与政府、媒体等在对某事件进行的意义建构具有属性网络的相关性；</span></strong><span>而“形式化回应”则意味着</span><strong><span>一方的意义建构中，表意结果与对话方的关注间不相似</span></strong><span>，也即政府与公众的属性网络矩阵不具备显著相关性。</span></p><p><span>本文借助Python辅助构建各方议程属性网络。先通过识别“卫健委”、“卫生健康委”等字样筛选属地方政府的议程文本；通过识别“记者”、“台”、“报”等字样筛选属媒体的议程文本；去除政府和媒体议程的文本属网民议程文本。</span></p><p><span>之后通过jieba分词包对三个主体的议程文本进行关键词拆分，并统计每类文本的高频词；对高频词进行虚词和无效词剔除等文本清洗工作，并保留高频词；再次，分别在三类文本中统计高频词间两两共现的次数，并将其次数储存在矩阵中，矩阵横纵轴均为高频词，表格内的数字表示共现次数。在统计学意义上，矩阵间的相关性水平反映了不同主体对事件的意义建构的趋同程度，相关性水平越高，各方意义建构越趋同。</span></p><p><span> </span></p><h4 id='2借助ucniet进行qap分析'><span>2、借助Ucniet进行QAP分析</span></h4><p><span>NSA理论是将属性之间的共现关系作为分析对象的，统计数值表示的并不是独立的，传统的相关和回归分析会使p值过于乐观，因此需要通过二次分配问题（Quadratic Assignment Problem）进行检验（</span><a href='https://doi.org/10.1080/08838151.2012.732148'><span>Guo, 2012</span></a><span>）。由于没有找到合适的Python代码，本文使用Ucinet对矩阵进行QAP分析。</span></p><p><span>本文根据政府回应和舆论关切所表达的意义结构是否契合来判断政府回应是否形式化。按照NSA理论将“意义结构”定义为“对议程属性的组织”，将“契合度”定义为两个属性网络之间的相关性，将“形式化回应”定义为两个属性网络不相关。本文假设政府出于地方政府权限和公众诉求超越地方政府权限等原因（</span><a href='https://kns.cnki.net/kcms2/article/abstract?v=-0THPtffOh0HxuloZpg1kid-6RTO3U5o9GS_f7ELkl67K4lqq_cN4F4P1umhG6Ic6i8-SqG05OmZDR4FYbltDE3aHLuDXNNR3RDAKjWkMb41MgjlKRKwLFs9I66URKwXBZk2DRLdBuC-_q_xUUiv0Q==&amp;uniplatform=NZKPT&amp;language=CHS'><span>孙斐，2022</span></a><span>），在此事件中进行了形式化回应。具体而言，本文假设：</span></p><blockquote><p>&nbsp;</p><p><span>H1A：政府回应文本与媒体报道文本的属性网络矩阵之间相似。</span></p><p><span>拟态环境理论认为媒介信息环境可能影响人们对事物的判断，形式化回应的基础是政府主导话语秩序。且由于党性原则是我国特殊的媒介体制，媒体往往作为政府相关部门的传声筒，因此理论上政府回应文本与媒体报道文本的意义建构相似，所以属性网络矩阵的相关性高。</span></p><p>&nbsp;</p><p><span>H1B：政府回应文本与公众舆论文本的属性网络矩阵之间不相似。</span></p><p><span>形式化回应意味着政府回应在语言组织中仅会表浅地涉及舆论关切，两者对属性网络的组织会表现出结构性的差异，媒体作为传声筒也表现出类似的情形。</span></p></blockquote><p><span> </span></p><h3 id='三）数据整理与属性网络矩阵构建'><span>（三）数据整理与属性网络矩阵构建</span></h3><p><span>本文首先通过jieba分词包的默认值尝试进行文本拆分和高频词统计，具体使用代码如下：</span></p><p><span>根据分词-高频词统计结果设定并多次调整自定义词典和停用词词典，主要剔除了部分虚词（如“一直”、“正在”等）、泛指性主语（如“他们”、“你们”）、连词（如“由于”、“所以”等），并自定义了一些俗语和本事件中特定的语词（如“浮出”与“水面”组合、“防疫”和“政策”组合），具体见附件dictionary文件夹中的“自定义词典.txt”和“stop.txt”。之后又按前文所述方法主体分别构建了政府、媒体和公众议程的数据，经查验后共获得政府数据16条、媒体数据95条（其中包括自媒体）、公众数据889条，共计1000条，作为数据库，具体见附件optimized data文件夹中的“gov.xlsx”“media.xlsx”“public.xlsx”，使用代码如下：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 16.0703px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">pandas</span> <span class="cm-keyword">as</span> <span class="cm-variable">pd</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">jieba</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">xlwt</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">jieba</span>.<span class="cm-property">analyse</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 读取Excel文件</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">data</span> <span class="cm-operator">=</span> <span class="cm-variable">pd</span>.<span class="cm-property">read_excel</span>(<span class="cm-string">r"C:\Users\Administrator\Desktop\1\public.xlsx"</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">cut_mode</span> <span class="cm-operator">=</span> <span class="cm-string">"accurate"</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 加载自定义词典</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\地理.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\经济.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\科学.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\历史.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\社会.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\生活.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\体育.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\文化.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\艺术.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\娱乐.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">jieba</span>.<span class="cm-property">load_userdict</span>(<span class="cm-string">r'C:\Users\Administrator\Desktop\1\自然.txt'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># ... 加载其他自定义词典</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">stop_words_path</span> <span class="cm-operator">=</span> <span class="cm-string">r'C:\Users\Administrator\Desktop\1\stop.txt'</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">with</span> <span class="cm-builtin">open</span>(<span class="cm-variable">stop_words_path</span>, <span class="cm-string">'r'</span>, <span class="cm-variable">encoding</span><span class="cm-operator">=</span><span class="cm-string">'utf-8'</span>) <span class="cm-keyword">as</span> <span class="cm-variable">f</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">stop_words</span> <span class="cm-operator">=</span> [<span class="cm-variable">line</span>.<span class="cm-property">strip</span>() <span class="cm-keyword">for</span> <span class="cm-variable">line</span> <span class="cm-keyword">in</span> <span class="cm-variable">f</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 对指定字段进行高频词提取和统计</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">text</span> <span class="cm-operator">=</span> <span class="cm-variable">data</span>[<span class="cm-string">'全文内容'</span>] &nbsp;<span class="cm-comment"># 将'字段名称'替换为实际的字段名</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">word_count</span> <span class="cm-operator">=</span> {}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">for</span> <span class="cm-variable">t</span> <span class="cm-keyword">in</span> <span class="cm-variable">text</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-builtin">len</span>(<span class="cm-variable">t</span>) <span class="cm-operator">&gt;=</span> <span class="cm-number">80</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">words</span> <span class="cm-operator">=</span> <span class="cm-variable">jieba</span>.<span class="cm-property">lcut</span>(<span class="cm-variable">t</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> <span class="cm-variable">word</span> <span class="cm-keyword">in</span> <span class="cm-variable">words</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-builtin">len</span>(<span class="cm-variable">word</span>) <span class="cm-operator">&gt;=</span> <span class="cm-number">2</span>: &nbsp;<span class="cm-comment"># 过滤掉长度小于2的词</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-variable">word</span> <span class="cm-keyword">in</span> <span class="cm-variable">word_count</span> <span class="cm-keyword">and</span> <span class="cm-variable">word</span> <span class="cm-keyword">not</span> <span class="cm-keyword">in</span> <span class="cm-variable">stop_words</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">word_count</span>[<span class="cm-variable">word</span>] <span class="cm-operator">+=</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">else</span>:</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">word_count</span>[<span class="cm-variable">word</span>] <span class="cm-operator">=</span> <span class="cm-number">1</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 806px;"></div><div class="CodeMirror-gutters" style="display: none; height: 806px;"></div></div></div></pre><p>&nbsp;</p><p><span>经调试，本文发现统计前65位高频词能够在尽可能保证意义框架总体完整的前提下控制矩阵规模，因此分别统计了政府、媒体和公众文本中的前65位高频词，按主体分别导出高频词数据，具体见附件toptopics martixa文件夹中的“govtoptopics.xls”“mediatoptopics.xls”“publictoptopics.xls”，使用代码如下：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="python"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 16.0703px; left: 12px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 提取高频词并排序</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">top_words</span> <span class="cm-operator">=</span> <span class="cm-builtin">sorted</span>(<span class="cm-variable">word_count</span>.<span class="cm-property">items</span>(), <span class="cm-variable">key</span><span class="cm-operator">=</span><span class="cm-keyword">lambda</span> <span class="cm-variable">x</span>: <span class="cm-variable">x</span>[<span class="cm-number">1</span>], <span class="cm-variable">reverse</span><span class="cm-operator">=</span><span class="cm-keyword">True</span>)[:<span class="cm-number">100</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 输出到 Excel</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">workbook</span> <span class="cm-operator">=</span> <span class="cm-variable">xlwt</span>.<span class="cm-property">Workbook</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sheet</span> <span class="cm-operator">=</span> <span class="cm-variable">workbook</span>.<span class="cm-property">add_sheet</span>(<span class="cm-string">'高频词统计'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sheet</span>.<span class="cm-property">write</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-string">'词语'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">sheet</span>.<span class="cm-property">write</span>(<span class="cm-number">0</span>, <span class="cm-number">1</span>, <span class="cm-string">'出现次数'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">for</span> <span class="cm-variable">i</span>, (<span class="cm-variable">word</span>, <span class="cm-variable">count</span>) <span class="cm-keyword">in</span> <span class="cm-builtin">enumerate</span>(<span class="cm-variable">top_words</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">sheet</span>.<span class="cm-property">write</span>(<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-variable">word</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">sheet</span>.<span class="cm-property">write</span>(<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-number">1</span>, <span class="cm-variable">count</span>)</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">workbook</span>.<span class="cm-property">save</span>(<span class="cm-string">'高频词统计.xls'</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 262px;"></div><div class="CodeMirror-gutters" style="display: none; height: 262px;"></div></div></div></pre><p>&nbsp;</p><p><span>最后，按主体分别以高频词数据为参照，在数据库内构建该主体在本次事件中传播构建的属性网络矩阵，矩阵规模为65*65，具体见附件co-occuring martix文件夹中的“govmatrix.xls”“mediamatrix.xls”“publicmatrix.xls”，使用代码如下：</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" spellcheck="false" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 640.41px; left: 390.031px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 构建高频词字典，便于索引</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">word_index_map</span> <span class="cm-operator">=</span> {<span class="cm-variable">word</span>[<span class="cm-number">0</span>]: <span class="cm-variable">idx</span> <span class="cm-keyword">for</span> <span class="cm-variable">idx</span>, <span class="cm-variable">word</span> <span class="cm-keyword">in</span> <span class="cm-builtin">enumerate</span>(<span class="cm-variable">top_words</span>)}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 统计高频词共现次数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 统计高频词共现次数</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">co_occurrence_matrix</span> <span class="cm-operator">=</span> [[<span class="cm-number">0</span>] <span class="cm-operator">*</span> <span class="cm-number">100</span> <span class="cm-keyword">for</span> <span class="cm-variable">_</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">100</span>)]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">for</span> <span class="cm-variable">t</span> <span class="cm-keyword">in</span> <span class="cm-variable">text</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-builtin">len</span>(<span class="cm-variable">t</span>) <span class="cm-operator">&gt;=</span> <span class="cm-number">80</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">words</span> <span class="cm-operator">=</span> [<span class="cm-variable">word</span> <span class="cm-keyword">for</span> <span class="cm-variable">word</span> <span class="cm-keyword">in</span> <span class="cm-variable">jieba</span>.<span class="cm-property">lcut</span>(<span class="cm-variable">t</span>) <span class="cm-keyword">if</span> <span class="cm-builtin">len</span>(<span class="cm-variable">word</span>) <span class="cm-operator">&gt;=</span> <span class="cm-number">2</span> <span class="cm-keyword">and</span> <span class="cm-variable">word</span> <span class="cm-keyword">not</span> <span class="cm-keyword">in</span> <span class="cm-variable">stop_words</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment"># 去重，确保之后的处理中不会重复统计相同的词语对</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">words</span> <span class="cm-operator">=</span> <span class="cm-builtin">list</span>(<span class="cm-builtin">set</span>(<span class="cm-variable">words</span>))</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-builtin">len</span>(<span class="cm-variable">words</span>)):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> <span class="cm-variable">j</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-builtin">len</span>(<span class="cm-variable">words</span>)):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">word1</span>, <span class="cm-variable">word2</span> <span class="cm-operator">=</span> <span class="cm-variable">words</span>[<span class="cm-variable">i</span>], <span class="cm-variable">words</span>[<span class="cm-variable">j</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-variable">word1</span> <span class="cm-operator">!=</span> <span class="cm-variable">word2</span> : &nbsp;<span class="cm-comment"># 确保不是相同的两个词语</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-variable">word1</span> <span class="cm-keyword">in</span> <span class="cm-variable">word_index_map</span> <span class="cm-keyword">and</span> <span class="cm-variable">word2</span> <span class="cm-keyword">in</span> <span class="cm-variable">word_index_map</span>: &nbsp;<span class="cm-comment"># 使用字典进行检索</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">idx1</span> <span class="cm-operator">=</span> <span class="cm-variable">word_index_map</span>[<span class="cm-variable">word1</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">idx2</span> <span class="cm-operator">=</span> <span class="cm-variable">word_index_map</span>[<span class="cm-variable">word2</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">co_occurrence_matrix</span>[<span class="cm-variable">idx1</span>][<span class="cm-variable">idx2</span>] <span class="cm-operator">+=</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">co_occurrence_matrix</span>[<span class="cm-variable">idx2</span>][<span class="cm-variable">idx1</span>] <span class="cm-operator">+=</span> <span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># 输出高频词共现次数到 Excel</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">co_occurrence_workbook</span> <span class="cm-operator">=</span> <span class="cm-variable">xlwt</span>.<span class="cm-property">Workbook</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">co_occurrence_sheet</span> <span class="cm-operator">=</span> <span class="cm-variable">co_occurrence_workbook</span>.<span class="cm-property">add_sheet</span>(<span class="cm-string">'高频词共现次数统计'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">co_occurrence_sheet</span>.<span class="cm-property">write</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-string">'词语/词语'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">100</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">co_occurrence_sheet</span>.<span class="cm-property">write</span>(<span class="cm-number">0</span>, <span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-variable">top_words</span>[<span class="cm-variable">i</span>][<span class="cm-number">0</span>]) &nbsp;<span class="cm-comment"># 第一行写入词语</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">co_occurrence_sheet</span>.<span class="cm-property">write</span>(<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-number">0</span>, <span class="cm-variable">top_words</span>[<span class="cm-variable">i</span>][<span class="cm-number">0</span>]) &nbsp;<span class="cm-comment"># 第一列写入词语</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> <span class="cm-variable">j</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">100</span>):</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">co_occurrence_sheet</span>.<span class="cm-property">write</span>(<span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-variable">j</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>, <span class="cm-variable">co_occurrence_matrix</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>]) &nbsp;<span class="cm-comment"># 写入共现次数</span></span></pre><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">co_occurrence_workbook</span>.<span class="cm-property">save</span>(<span class="cm-string">'高频词共现次数统计.xls'</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 644px;"></div><div class="CodeMirror-gutters" style="display: none; height: 644px;"></div></div></div></pre><p>&nbsp;</p><p><span> </span></p><h2 id='研究发现'><strong><span>研究发现</span></strong></h2><h3 id='一）政府与媒体间属性网络相似'><span>（一）政府与媒体间属性网络相似</span></h3><p><span>在Ucinet6.212对前文中构建起的属性网络矩阵进行QAP检验后发现，政府与媒体议程之间的属性网络相关性较高，根据表1的结果可见H1A的假设成立，两者间的属性网络矩阵的相关性强度较高，Obs值达0.365，且P-values均为0.000（见附件“Ucinet分析结果”文件夹中“政府-媒体相关性.txt”），显著性水平高；将政府属性网络作为自变量、媒体属性网络作为因变量进行回归后发现，R2和调整后的R2均为13.3%（见表2）。可以认为在我国的社交媒体中，政府与媒体在拟态环境的构建时总体趋于同调，但媒体处在政治与经济的双重压力之下，并且一定程度上受自身行业规范影响，因此在意义构建的过程中具有不完全的独立性。</span></p> <center>表1. 政府与媒体属性网络的相关性分析</center><p>&nbsp;</p><p><span> </span><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208221357770.png" referrerpolicy="no-referrer" alt="image-20240208221357770"></p><p><span> </span></p><center>表2. 政府与媒体属性网络的回归分析</center><p>&nbsp;</p><p><span> </span><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208222234306.png" referrerpolicy="no-referrer" alt="image-20240208222234306"></p><p><span>借助Ucinet的插件NetDraw（版本号2.084）对比政府回应文本和媒体报道文本的节点网络也可以发现两者间的结构具有相似性，中心度较高的节点均出现了“疫情”“医院”“卫健委”等，且关联属性也较为类似。</span></p><center>图1. 政府与媒体文本属性网络的结构（左为政府回应、右为媒体报道）</center><p><span> </span></p><figure class='table-figure'><table><thead><tr><th><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/clip_image007.jpg" referrerpolicy="no-referrer"></th><th><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/clip_image008.jpg" referrerpolicy="no-referrer"></th></tr></thead><tbody></tbody></table></figure><p><span> </span></p><h3 id='二）政府与公众间属性网络也相似'><span>（二）政府与公众间属性网络也相似</span></h3><p><span>QAP检验后发现，政府与公众议程之间的属性网络也相关性较高，根据表3的结果可见H1B的假设不成立，两者间的属性网络矩阵的相关性强度也较高，Obs值达0.463，甚至高于政府与媒体间属性网络的相关性，P-values也均为0.000（见附件“Ucinet分析结果”文件夹中“政府-公众相关性.txt”），显著性水平高；由于缺少时间数据，本文无法确定政府与公众间谁的属性网络影响了另一方，因此分别尝试了将政府作为自变量和自变量来进行回归分析，发现无论以政府文本还是公众文本为自变量为自变量时R2和调整后的R2均为21.4%（见表4、5）。</span></p><p><span> </span></p><center>表3. 政府与公众属性网络的相关性分析</center><p><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208222652111.png" referrerpolicy="no-referrer" alt="image-20240208222652111"></p> <center>表4. 政府-公众属性网络的回归分析</center><p><span> </span><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208222700698.png" referrerpolicy="no-referrer" alt="image-20240208222700698"></p><center>表5. 公众-政府属性网络的回归分析</center><p><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208222722864.png" referrerpolicy="no-referrer" alt="image-20240208222722864"></p><p><span>可见H1B并不成立，在社交媒体中政府回应与公众关于该议程的属性网络结构具备较高的相关性，说明政府的回应与公众的诉求表达之间存在较为紧密的关联，而并不完全是一种姿态化的应付。</span></p><h2 id='结论'><strong><span>结论</span></strong></h2><p><span> </span></p><p><span>本文试图从语用学的视角分析政府在社交媒体中回应公众关切是否是一种形式化的言说行为，认为某一特定主体对议题的意义构建会形成特殊的属性结构网络，通过QAP方法检验网络间的相似性可以判断不同主体是否在同一个意义层次上进行意义传播，如果是则可视为对话，如果不是则可视为应付。</span></p><p><span>对疫情期间西安一孕妇因核酸问题流产一事中政府、媒体和公众间的议程属性网络的分析发现，政府与公众就该议程产生的意义网络实际上比较相似，统计结果似乎不能得出政府形式化的结论。不过对比政府与公众属性网络的结构可以发现，不同于政府文本以行政主体职责为主的指称方式，公众的属性网络中出现了如“领导”、“人民”和“悲剧”等具有意识形态和情感价值判断的词汇（见图2），考虑到中文的特殊性，未来或许不仅要关注属性结构的中心性，也要关注中心度较高的节点与其他属性之间所构成的子网络的显著性，才能更好地判断两个属性矩阵之间在意义交流层面的同调程度。</span></p><center>图2. 政府与公众文本属性网络的结构（左为政府回应、右为公众文本）</center><figure class='table-figure'><table><thead><tr><th><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208230515387.png" referrerpolicy="no-referrer" alt="image-20240208230515387"></th><th><img src="https://raw.githubusercontent.com/xiaoqiang2005/img_repo/main/image-20240208230244213.png" referrerpolicy="no-referrer" alt="image-20240208230244213"></th></tr></thead><tbody></tbody></table></figure><p>&nbsp;</p><h2 id='参考文献'><strong><span>参考文献</span></strong></h2><p><a href='https://www.amazon.com/How-Do-Things-Words-Lectures/dp/0674411528'><span>Austin, J. L. (1975). How to Do Things with Words: Second Edition. Harvard University Press</span></a></p><p><a href='https://onlinelibrary.wiley.com/doi/10.1111/psj.12111'><span>Cairney, P., &amp; Jones, M. D. (2016). Kingdon’s Multiple Streams Approach: What Is the Empirical Impact of this Universal Theory? Policy Studies Journal, 44(1), 37–58.</span></a></p><p><a href='https://doi.org/10.2307/2182440'><span>Grice, H. P. (1957). Meaning. The Philosophical Review, 66(3), 377–388.</span></a></p><p><a href='https://www.semanticscholar.org/paper/An-Expanded-Perspective-on-Agenda-Setting-Effects%3A-Guo-Vu/e39087404907426389a5322d41648d0e34e09d9c'><span>Guo, L., Vu, H. T., &amp; McCombs, M. (2012). An Expanded Perspective on Agenda- Setting Effects. Exploring the third level of agenda setting. Revista de Comunicación, 11.</span></a></p><p><a href='https://doi.org/10.1080/08838151.2012.732148'><span>Guo, L. (2012). The Application of Social Network Analysis in Agenda Setting Research: A Methodological Exploration. Journal of Broadcasting &amp; Electronic Media, 56(4), 616–631.</span></a></p><p><a href='https://doi.org/10.1002/9781118783764.wbieme0030'><span>Wanta, W., &amp; Alkazemi, M. (2017). Agenda‐Setting: History and Research Tradition. The International Encyclopedia of Media Effects, 1-14.</span></a></p><p><a href='https://kns.cnki.net/kcms2/article/abstract?v=4j1cDaxzFAm_qLOvGGw4_fg54zFHk0zK_194agtZmQhejyas230Z0_T92KlmeSriw4VrhBXYsnfeLtUJwmtB8XrsoOcwfanLYDysMJMp-wdU2kWLz4IhSUn06DQfaOQEWvh9KNQCsYVpOFe3dlzomg==&amp;uniplatform=NZKPT&amp;language=CHS'><span>邓卫华 &amp; 吕佩.(2021).反转或缓解?突发事件政府回应有效性研究——基于在线文本情感分析. 中国行政管理(02),123-130.</span></a></p><p><a href='https://kns.cnki.net/kcms2/article/abstract?v=uzDkwlsKYf8OdvxwWlL4F1v30203pc_J_ZQkwsYsWtN5yF7PO5VkTdM-MH2tpaDT8ltvX6w7yUPf35iqB6AQyjBg1HDYgUPMymxbhi5Oy6eWA1N3Lwq46hAi5cuBz8Lx8ybO0v5nlOqJOMIazf1aew==&amp;uniplatform=NZKPT&amp;language=CHS'><span>马雪松 &amp; 肖传龙. (2023). 在“关注”与“应付”之间：注意力分配视角下的基层政府回应逻辑. 治理研究 (02), 94-108+159.</span></a></p><p><a href='https://kns.cnki.net/kcms2/article/abstract?v=4j1cDaxzFAm_qLOvGGw4_fg54zFHk0zK_194agtZmQhejyas230Z0_T92KlmeSriw4VrhBXYsnfeLtUJwmtB8XrsoOcwfanLYDysMJMp-wdU2kWLz4IhSUn06DQfaOQEWvh9KNQCsYVpOFe3dlzomg==&amp;uniplatform=NZKPT&amp;language=CHS'><span>邵梓捷 &amp; 杨良伟.(2020).“钟摆式回应”:回应性不足的一种解释——基于S市地方领导留言板的实证研究. 经济社会体制比较(01),114-122.</span></a></p><p><a href='https://kns.cnki.net/kcms2/article/abstract?v=-0THPtffOh0HxuloZpg1kid-6RTO3U5o9GS_f7ELkl67K4lqq_cN4F4P1umhG6Ic6i8-SqG05OmZDR4FYbltDE3aHLuDXNNR3RDAKjWkMb41MgjlKRKwLFs9I66URKwXBZk2DRLdBuC-_q_xUUiv0Q==&amp;uniplatform=NZKPT&amp;language=CHS'><span>孙斐.(2022).政府形式回应是无奈之举还是必要手段：一个整合性归因模型. 上海行政学院学报(01),28-41.</span></a></p><p><a href='https://kns.cnki.net/kcms2/article/abstract?v=-0THPtffOh3R6zuFLjJl9bHPIRQvkYeK2M1u5h-sUcEjpwMoGmGHMLvxwSih5eyrU6FfZbSAq4iVmW4AJCT_cNBJdrpEgZ7DIPd9xHWdhmEpOlhhiO3_G21xKMoC-eBaSCAuFegh5ewGeBBqZ86duA==&amp;uniplatform=NZKPT&amp;language=CHS'><span>张楠迪扬, 郑旭扬 &amp; 赵乾翔. (2023). 政府回应性：作为日常治理的“全回应”模式——基于LDA主题建模的地方政务服务“接诉即办”实证分析. 中国行政管理 (03), 68-78.</span></a><span>( )</span></p></div></div>
+</body>
+</html>
